@@ -7,24 +7,26 @@
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500..700&display=swap">
 <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="site-header__inner">
-    <a class="brand" href="/"><img src="/assets/app-icon.png" alt=""><span>Pillar</span></a>
-    <nav class="site-nav">
-      <a href="/privacy-policy.html">Privacy</a>
-      <a href="/terms-of-use.html">Terms</a>
-      <a href="/subscription-terms.html">Subscriptions</a>
-      <a href="/support.html">Support</a>
-    </nav>
-  </div>
+
+<div class="wash wash--page"></div>
+<header class="bar shell">
+  <a class="mark" href="/"><img src="/assets/app-icon.png" alt="" width="36" height="36"><span>Pillar</span></a>
+  <nav>
+    <a href="/privacy-policy.html">Privacy</a>
+    <a href="/terms-of-use.html">Terms</a>
+    <a href="/subscription-terms.html">Subscriptions</a>
+    <a href="/support.html">Support</a>
+    <a class="bar__cta" href="/#get">Get the app</a>
+  </nav>
 </header>
-<main>
+<main class="shell">
+<div class="prose">
   <h1>Nothing here.</h1>
-  <p class="lede">That page does not exist. The ones that do:</p>
+  <p class="lead">That page does not exist. The ones that do:</p>
   <ul class="card-list">
     <li><a href="/"><strong>Home</strong><span>What Pillar is.</span></a></li>
     <li><a href="/privacy-policy.html"><strong>Privacy Policy</strong><span>What stays on your device.</span></a></li>
@@ -32,6 +34,25 @@
     <li><a href="/subscription-terms.html"><strong>Subscription Terms</strong><span>Plans, trial, cancelling.</span></a></li>
     <li><a href="/support.html"><strong>Support</strong><span>Get help.</span></a></li>
   </ul>
+</div>
 </main>
+
+<footer class="site-footer">
+  <div class="shell foot">
+    <nav>
+      <a href="/">Home</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/terms-of-use.html">Terms of Use</a>
+      <a href="/subscription-terms.html">Subscription Terms</a>
+      <a href="/support.html">Support</a>
+    </nav>
+    <div class="foot__meta">
+      <p>&copy; 2026 Pillar. All rights reserved.</p>
+      <p>Pillar is a posture-awareness and focus tool. It is not a medical device and does not
+      diagnose, treat or prevent any condition.</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/pillar.js" defer></script>
 </body>
 </html>

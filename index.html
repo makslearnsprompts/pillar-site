@@ -3,88 +3,813 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pillar — posture coach for the AirPods you already wear</title>
-<meta name="description" content="Pillar reads head and neck position from your AirPods motion sensors and quietly tells you when you slouch. No camera, no extra hardware, everything on your device.">
-<meta name="robots" content="index, follow">
+<title>Pillar — the posture coach in the AirPods you already wear</title>
+<meta name="description" content="Pillar reads the angle of your head from the motion sensors in your AirPods and tells you, quietly, the moment you slump. No camera, no wearable to buy, and nothing leaves your iPhone.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Pillar">
+<meta name="theme-color" content="#f2f0e9">
+<link rel="canonical" href="https://pillar.glowd.tech/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pillar">
-<meta property="og:title" content="Pillar — posture coach for the AirPods you already wear">
-<meta property="og:description" content="Reads head position from your AirPods motion sensors and nudges you when you slouch. No camera, no extra hardware.">
+<meta property="og:url" content="https://pillar.glowd.tech/">
+<meta property="og:locale" content="en">
+<meta property="og:title" content="Pillar — the posture coach in the AirPods you already wear">
+<meta property="og:description" content="Reads the angle of your head from your AirPods and nudges you the moment you slump. No camera, no wearable to buy, nothing leaves your iPhone.">
+<meta property="og:image" content="https://pillar.glowd.tech/assets/app-icon.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/app-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500..700&display=swap">
 <link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://pillar.glowd.tech/#publisher",
+      "name": "Pillar",
+      "url": "https://pillar.glowd.tech/",
+      "logo": "https://pillar.glowd.tech/assets/app-icon.png",
+      "email": "glowdapp@gmail.com"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pillar.glowd.tech/#website",
+      "url": "https://pillar.glowd.tech/",
+      "name": "Pillar",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://pillar.glowd.tech/#publisher" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://pillar.glowd.tech/#webpage",
+      "url": "https://pillar.glowd.tech/",
+      "name": "Pillar — the posture coach in the AirPods you already wear",
+      "isPartOf": { "@id": "https://pillar.glowd.tech/#website" },
+      "about": { "@id": "https://pillar.glowd.tech/#app" },
+      "primaryImageOfPage": "https://pillar.glowd.tech/assets/shots/today.webp",
+      "dateModified": "2026-09-08",
+      "description": "Pillar reads the angle of your head from the motion sensors in your AirPods and tells you, quietly, the moment you slump. No camera, no wearable to buy, and nothing leaves your iPhone."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://pillar.glowd.tech/#app",
+      "name": "Pillar",
+      "alternateName": "Pillar posture coach",
+      "applicationCategory": "HealthApplication",
+      "applicationSubCategory": "Posture and focus tracking",
+      "operatingSystem": "iOS 18.5 or later",
+      "softwareRequirements": "iPhone running iOS 18.5 or later; AirPods Pro (1st or 2nd generation), AirPods (3rd generation) or AirPods Max; Motion & Fitness permission.",
+      "url": "https://pillar.glowd.tech/",
+      "installUrl": "https://pillar.glowd.tech/",
+      "screenshot": [
+        "https://pillar.glowd.tech/assets/shots/today.webp",
+        "https://pillar.glowd.tech/assets/shots/insights.webp",
+        "https://pillar.glowd.tech/assets/shots/you.webp"
+      ],
+      "publisher": { "@id": "https://pillar.glowd.tech/#publisher" },
+      "privacyPolicy": "https://pillar.glowd.tech/privacy-policy.html",
+      "termsOfService": "https://pillar.glowd.tech/terms-of-use.html",
+      "isAccessibleForFree": true,
+      "description": "Pillar measures sitting posture with the motion sensors already inside AirPods. It reads how far your head is tipped forward, compares it against a baseline you measured yourself, and sends a quiet haptic or audio nudge when you have been slumped long enough for it to count. Analysis runs on the iPhone; there is no camera, no wearable to buy and no account. Pillar is a posture-awareness and focus tool, not a medical device.",
+      "featureList": [
+        "Reads head pitch from AirPods motion sensors — no camera and no extra hardware",
+        "Calibrates against your own tall and slumped angles instead of an average",
+        "Haptic or audio nudge that stops the moment you straighten",
+        "Pomodoro focus timer with posture watched during focus and left alone during rests",
+        "Live Activity and Dynamic Island so the session runs with the phone locked",
+        "Session score, streak and a weekly chart of tall time against a goal",
+        "All analysis on-device; no account, and history you can erase from the app"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free to install. The free tier includes calibration, one session a day and the Today screen. Premium is a subscription that unlocks unlimited sessions, the Pomodoro focus timer, full Insights and history, all nudge sounds and the widgets."
+      }
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://pillar.glowd.tech/#howto",
+      "name": "How to track your sitting posture with AirPods",
+      "description": "Set up Pillar and run a posture session using the motion sensors in AirPods.",
+      "totalTime": "PT10M",
+      "tool": [
+        { "@type": "HowToTool", "name": "iPhone running iOS 18.5 or later" },
+        { "@type": "HowToTool", "name": "AirPods Pro, AirPods (3rd generation) or AirPods Max" }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Measure yourself",
+          "text": "Put both AirPods in and run calibration: two reads of five seconds each. Sit the way you would like to sit, then slump the way you actually do. Those two angles become your own nudge threshold, and you can redo them whenever your desk changes."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Start a session and work",
+          "text": "Start an open-ended session or a Pomodoro block. Pillar watches the pitch of your head and nudges you — haptic, chime or both — once your head has been forward long enough to be a slump rather than a glance at your keyboard. The nudge stops as soon as you straighten."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Finish and read the score",
+          "text": "The session closes with a score out of 100, the minutes you held tall, your longest tall stretch and how many nudges you answered. Over weeks those sessions become a streak, a per-day chart against your tall-time goal, and one sentence naming when you most often slip."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How can AirPods measure my posture?",
+          "acceptedAnswer": { "@type": "Answer", "text": "AirPods Pro, AirPods (3rd generation) and AirPods Max contain motion sensors that iOS exposes as head-motion data. Pillar reads the pitch of that data — how far your head is tipped forward — and compares it against angles you measured yourself during calibration. It never sees your body, only the angle of your head." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which AirPods work with Pillar?",
+          "acceptedAnswer": { "@type": "Answer", "text": "AirPods Pro (1st and 2nd generation), AirPods (3rd generation) and AirPods Max. Older AirPods have no motion sensors and cannot report head position. You also need an iPhone running iOS 18.5 or later, and Motion & Fitness permission." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Pillar use my camera?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. There is no camera access, no photo of you and no video. The only sensor Pillar reads is the motion sensor already inside your AirPods." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does my data leave my phone?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Head-position data is read and analysed on your iPhone, and raw motion never leaves the device. Your session history lives in local app storage and you can wipe it from the app at any time. A short list of anonymous analytics events is described in the Privacy Policy." }
+        },
+        {
+          "@type": "Question",
+          "name": "What does a nudge feel like?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A haptic tap, a soft chime in the AirPods, or both — you choose in settings. It fires when your head has been forward past your own threshold for long enough that it is a slump and not a glance down, and it stops the moment you straighten." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will it nag me all day?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Pillar only watches during a session you started. Sensitivity is adjustable, quiet hours silence nudges on a schedule, and the nudge disappears as soon as your head comes back up rather than repeating." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use it with music or a call?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Sound cues mix with whatever is playing, and you can switch to haptic only. Head tracking works whether or not audio is playing, as long as both AirPods are in." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Pillar a medical device?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Pillar is a posture-awareness and focus tool. It does not diagnose, treat or prevent any condition, and it is not a substitute for advice from a clinician." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Pillar free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Pillar is free to install, and the free tier includes calibration, one session a day and the Today screen. Premium unlocks unlimited sessions, the Pomodoro focus timer, full Insights and history, all nudge sounds and widgets. The Subscription Terms page carries the current plans." }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="site-header__inner">
-    <a class="brand" href="/"><img src="assets/app-icon.png" alt=""><span>Pillar</span></a>
-    <nav class="site-nav">
-      <a href="/privacy-policy.html">Privacy</a>
-      <a href="/terms-of-use.html">Terms</a>
-      <a href="/subscription-terms.html">Subscriptions</a>
-      <a href="/support.html">Support</a>
-    </nav>
-  </div>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<g id="i-check"><path d="M4 12.5 9 17.5 20 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g id="i-eye-off"><path d="M3 3 21 21M10.6 6.3A9.4 9.4 0 0 1 12 6.2c4.4 0 8 3.2 9.4 5.8a13 13 0 0 1-2.7 3.4M6.4 7.9A12.7 12.7 0 0 0 2.6 12c1.4 2.6 5 5.8 9.4 5.8a9.8 9.8 0 0 0 3.4-.6M9.9 9.9a3 3 0 0 0 4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g id="i-lock"><path d="M6.2 10.4V7.6a5.8 5.8 0 0 1 11.6 0v2.8M5.4 10.4h13.2a1.4 1.4 0 0 1 1.4 1.4v7.4a1.4 1.4 0 0 1-1.4 1.4H5.4A1.4 1.4 0 0 1 4 19.2v-7.4a1.4 1.4 0 0 1 1.4-1.4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g id="i-airpods"><path d="M7.6 2.6c2 0 3.4 1.9 3.4 4.5 0 2.2-.8 3.6-2.1 4.2l-.5 7.6a1.4 1.4 0 0 1-2.8 0l-.5-7.6C3.8 10.7 3 9.3 3 7.1c0-2.6 1.5-4.5 3.4-4.5ZM16.4 2.6c-2 0-3.4 1.9-3.4 4.5 0 2.2.8 3.6 2.1 4.2l.5 7.6a1.4 1.4 0 0 0 2.8 0l.5-7.6c1.3-.6 2.1-2 2.1-4.2 0-2.6-1.5-4.5-3.4-4.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="7" cy="7" r="1.5" fill="currentColor"/><circle cx="17" cy="7" r="1.5" fill="currentColor"/></g>
+<g id="i-phone"><path d="M7.2 2.6h9.6a2 2 0 0 1 2 2v14.8a2 2 0 0 1-2 2H7.2a2 2 0 0 1-2-2V4.6a2 2 0 0 1 2-2ZM10 5.4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g id="i-trash"><path d="M4.6 6.6h14.8M9.4 6.6V4.8a1.4 1.4 0 0 1 1.4-1.4h2.4a1.4 1.4 0 0 1 1.4 1.4v1.8M6.6 6.6l.9 12.6a1.6 1.6 0 0 0 1.6 1.4h5.8a1.6 1.6 0 0 0 1.6-1.4l.9-12.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g id="i-play"><path d="M7.4 4.9 19 12 7.4 19.1Z" fill="currentColor"/></g>
+<g id="i-pause"><path d="M8.6 4.6v14.8M15.4 4.6v14.8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></g>
+<g id="i-flame"><path d="M12 2.8s.9 3-1.4 5.4C8 10.9 6 12.5 6 15.4a6 6 0 0 0 12 0c0-2.6-1.4-4.2-2.6-5.6-1 1-1.6 1.3-2.2 1.3.6-2.6.6-5.8-1.2-8.3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></g>
+<g id="i-petal"><path d="M12 2.4c1.7 0 2.9 1.4 3 3.1 1.4-1 3.3-.9 4.3.4s.7 3.2-.5 4.3c1.6.5 2.6 2 2.2 3.6s-2 2.6-3.7 2.4c.5 1.6-.3 3.3-1.9 3.9s-3.3-.1-4-1.6c-.8 1.5-2.5 2.2-4 1.6s-2.4-2.3-1.9-3.9c-1.7.2-3.2-.8-3.7-2.4s.6-3.1 2.2-3.6c-1.2-1.1-1.5-3-.5-4.3s2.9-1.4 4.3-.4c.1-1.7 1.3-3.1 3-3.1Z" fill="currentColor"/><circle cx="12" cy="12" r="3.6" fill="#fff" opacity=".55"/></g>
+<g id="i-apple"><path transform="scale(.0625)" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z" fill="currentColor"/></g>
+</defs></svg>
+
+<div class="wash"></div>
+
+<header class="bar shell">
+  <a class="mark" href="/"><img src="assets/app-icon.png" alt="" width="36" height="36"><span>Pillar</span></a>
+  <nav>
+    <a href="#how">How it works</a>
+    <a href="#features">What it does</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#requirements">Requirements</a>
+    <a href="#faq">FAQ</a>
+    <a class="bar__cta" href="#get" data-cta="header">Get the app</a>
+  </nav>
 </header>
 
-<main>
-  <div class="hero">
+<main id="main">
+<div class="shell">
+
+  <!-- ── Hero ──────────────────────────────────────────────────────────── -->
+  <section class="hero">
     <div class="hero__copy">
-      <h1>Sit tall without being nagged.</h1>
-      <p class="lede">Pillar reads head and neck position from the motion sensors in your AirPods and
-      tells you, quietly, when you slouch. No camera. No wearable to buy. No photo of you.</p>
+      <h1>Sit tall through the whole work block.</h1>
+      <p class="lead">Pillar reads the angle of your head from the motion sensors in the AirPods
+      you already wear, and tells you — quietly, in your ear — the moment you start to slump.
+      No camera. Nothing new to buy. Nothing leaves your phone.</p>
+
+      <div class="cta">
+        <a class="store" href="#get" data-cta="hero" aria-label="Download Pillar on the App Store">
+          <img src="assets/app-store-badge.svg" alt="Download on the App Store" width="168" height="56">
+        </a>
+        <p class="cta__note">Coming to iPhone<span>iOS 18.5 or later</span></p>
+      </div>
+
     </div>
-    <div class="hero__figure"><img src="assets/mascot.png" alt="Pillar's flower mascot, sitting upright"></div>
+
+    <div class="trust">
+      <div class="laurel">
+        <svg viewBox="0 0 375 305" aria-hidden="true"><defs><linearGradient id="pl-gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6bf59"/><stop offset="1" stop-color="#7a5a10"/></linearGradient></defs><g fill="url(#pl-gold)"><path d="M145.2 260.8L137.1 257.2L129.4 252.9L122.0 248.1L115.1 242.7L108.5 236.8L102.5 230.4L96.9 223.6L92.0 216.3L87.5 208.7L83.7 200.8L80.6 192.5L78.1 184.1L76.2 175.5L75.0 166.8L74.5 158.0L74.7 149.2L75.6 140.4L77.1 131.7L79.4 123.2L82.2 114.9L85.8 106.8L89.9 99.0L94.6 91.6L99.9 84.6L105.8 78.0L112.1 71.8L118.9 66.2L126.1 61.2L133.6 56.7L141.5 52.8" fill="none" stroke="url(#pl-gold)" stroke-width="3" stroke-linecap="round"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(139.7 258.4) rotate(85.0) scale(0.899)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(139.7 258.4) rotate(151.0) scale(0.719)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(142.6 238.6) rotate(102.5) scale(0.593)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(121.9 248.0) rotate(95.5) scale(0.975)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(121.9 248.0) rotate(161.5) scale(0.780)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(128.3 229.1) rotate(113.0) scale(0.644)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(106.2 234.5) rotate(106.0) scale(1.030)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(106.2 234.5) rotate(172.0) scale(0.824)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(116.0 217.0) rotate(123.5) scale(0.680)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(93.3 218.4) rotate(116.5) scale(1.061)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(93.3 218.4) rotate(182.5) scale(0.849)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(106.1 203.0) rotate(134.0) scale(0.700)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(83.5 200.2) rotate(127.0) scale(1.067)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(83.5 200.2) rotate(193.0) scale(0.854)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(98.9 187.4) rotate(144.5) scale(0.704)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(77.2 180.5) rotate(137.5) scale(1.050)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(77.2 180.5) rotate(203.5) scale(0.840)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(94.7 170.7) rotate(155.0) scale(0.693)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(74.6 159.9) rotate(148.0) scale(1.010)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(74.6 159.9) rotate(214.0) scale(0.808)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(93.5 153.5) rotate(-194.5) scale(0.667)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(75.7 139.3) rotate(-201.5) scale(0.949)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(75.7 139.3) rotate(-135.5) scale(0.760)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(95.6 136.5) rotate(-184.0) scale(0.627)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(80.7 119.2) rotate(-191.0) scale(0.872)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(80.7 119.2) rotate(-125.0) scale(0.697)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(100.7 120.0) rotate(-173.5) scale(0.575)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(89.1 100.4) rotate(-180.5) scale(0.781)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(89.1 100.4) rotate(-114.5) scale(0.625)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(108.7 104.8) rotate(-163.0) scale(0.515)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(100.9 83.4) rotate(-170.0) scale(0.681)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(100.9 83.4) rotate(-104.0) scale(0.544)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(119.3 91.3) rotate(-152.5) scale(0.449)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(115.6 68.8) rotate(-159.5) scale(0.575)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(115.6 68.8) rotate(-93.5) scale(0.460)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(132.7 57.2) rotate(-149.0) scale(0.470)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(132.7 57.2) rotate(-83.0) scale(0.376)"/><path d="M229.8 260.8L237.9 257.2L245.6 252.9L253.0 248.1L259.9 242.7L266.5 236.8L272.5 230.4L278.1 223.6L283.0 216.3L287.5 208.7L291.3 200.8L294.4 192.5L296.9 184.1L298.8 175.5L300.0 166.8L300.5 158.0L300.3 149.2L299.4 140.4L297.9 131.7L295.6 123.2L292.8 114.9L289.2 106.8L285.1 99.0L280.4 91.6L275.1 84.6L269.2 78.0L262.9 71.8L256.1 66.2L248.9 61.2L241.4 56.7L233.5 52.8" fill="none" stroke="url(#pl-gold)" stroke-width="3" stroke-linecap="round"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(235.3 258.4) rotate(-85.0) scale(0.899)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(235.3 258.4) rotate(-151.0) scale(0.719)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(232.4 238.6) rotate(-102.5) scale(0.593)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(253.1 248.0) rotate(-95.5) scale(0.975)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(253.1 248.0) rotate(-161.5) scale(0.780)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(246.7 229.1) rotate(-113.0) scale(0.644)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(268.8 234.5) rotate(-106.0) scale(1.030)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(268.8 234.5) rotate(-172.0) scale(0.824)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(259.0 217.0) rotate(-123.5) scale(0.680)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(281.7 218.4) rotate(-116.5) scale(1.061)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(281.7 218.4) rotate(-182.5) scale(0.849)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(268.9 203.0) rotate(-134.0) scale(0.700)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(291.5 200.2) rotate(-127.0) scale(1.067)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(291.5 200.2) rotate(-193.0) scale(0.854)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(276.1 187.4) rotate(-144.5) scale(0.704)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(297.8 180.5) rotate(-137.5) scale(1.050)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(297.8 180.5) rotate(-203.5) scale(0.840)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(280.3 170.7) rotate(-155.0) scale(0.693)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(300.4 159.9) rotate(-148.0) scale(1.010)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(300.4 159.9) rotate(-214.0) scale(0.808)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(281.5 153.5) rotate(194.5) scale(0.667)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(299.3 139.3) rotate(201.5) scale(0.949)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(299.3 139.3) rotate(135.5) scale(0.760)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(279.4 136.5) rotate(184.0) scale(0.627)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(294.3 119.2) rotate(191.0) scale(0.872)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(294.3 119.2) rotate(125.0) scale(0.697)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(274.3 120.0) rotate(173.5) scale(0.575)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(285.9 100.4) rotate(180.5) scale(0.781)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(285.9 100.4) rotate(114.5) scale(0.625)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(266.3 104.8) rotate(163.0) scale(0.515)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(274.1 83.4) rotate(170.0) scale(0.681)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(274.1 83.4) rotate(104.0) scale(0.544)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(255.7 91.3) rotate(152.5) scale(0.449)" opacity=".82"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(259.4 68.8) rotate(159.5) scale(0.575)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(259.4 68.8) rotate(93.5) scale(0.460)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(242.3 57.2) rotate(149.0) scale(0.470)"/><path d="M0 0C5.6-6.4 6.8-16.2 0-26.6C-6.8-16.2-5.6-6.4 0 0Z" transform="translate(242.3 57.2) rotate(83.0) scale(0.376)"/></g></svg>
+        <div class="laurel__in">
+          <div class="petals">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-petal"/></svg>
+          </div>
+          <b>No new hardware</b>
+        </div>
+      </div>
+      <ul class="trust__list">
+        <li>
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><use href="#i-airpods"/></svg>
+          <span><b>The earbuds are the sensor</b><em>AirPods Pro, AirPods 3 or AirPods Max — no strap, no clip, no camera.</em></span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><use href="#i-lock"/></svg>
+          <span><b>Nothing leaves your phone</b><em>Head position is read and analysed on the device. Raw motion never goes anywhere.</em></span>
+        </li>
+      </ul>
+    </div>
+
+    <figure class="shot">
+      <div class="shot__frame">
+        <img src="assets/shots/today.webp" width="880" height="1912" alt="The Pillar Today screen: the flower mascot standing on a morning sky, three hours seven minutes tall today against a four-hour goal, a score of 83, and a Start a session button." fetchpriority="high" decoding="async">
+      </div>
+    </figure>
+  </section>
+
+  <!-- ── Problem ───────────────────────────────────────────────────────── -->
+  <section class="problem" aria-labelledby="problem-h">
+    <div class="problem__copy">
+      <h2 id="problem-h">Nobody feels themselves slumping.</h2>
+      <p>It happens over about forty minutes, a degree at a time, while you are reading something
+      difficult. The head goes forward, the shoulders follow it, and the first signal your body
+      sends arrives hours later as a stiff neck at the end of the day — long past the point where
+      you could have done anything about it.</p>
+      <p>Pillar puts a number on the part you cannot feel. One session, and the afternoon stops
+      being one undifferentiated block of sitting and becomes minutes you sat tall and minutes
+      you did not.</p>
+    </div>
+
+    <figure class="panel">
+      <div class="ui">
+        <div class="ui__sky">
+          <div class="ui__row">
+            <span class="ui__label">Tuesday</span>
+            <span class="pill pill--gold"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><use href="#i-flame"/></svg>14 days</span>
+          </div>
+          <div class="figure figure--glow" style="--w:104px;margin-top:12px">
+            <div class="mascot" data-lean="0" aria-hidden="true"><img src="assets/mascot.svg" alt="" width="941" height="1672" loading="lazy" decoding="async"></div>
+          </div>
+        </div>
+        <div class="ui__sheet">
+          <ul class="ledger">
+            <li>
+              <div>
+                <div class="ledger__lead"><span class="fig fig--l">3h 07m</span><span class="ledger__label">tall today</span></div>
+                <div class="path" aria-hidden="true">
+                  <i class="is-tall" style="flex:53"></i><i class="is-slump" style="flex:14"></i><i class="is-rest" style="flex:33"></i>
+                </div>
+              </div>
+              <span class="ledger__side">goal 4h</span>
+            </li>
+          </ul>
+          <ul class="legend">
+            <li><i class="is-tall"></i>Sat tall <b>3h 07m</b></li>
+            <li><i class="is-slump"></i>Slumped <b>52m</b></li>
+          </ul>
+        </div>
+      </div>
+    </figure>
+  </section>
+
+  <!-- ── How it works ──────────────────────────────────────────────────── -->
+  <section class="how" id="how" aria-labelledby="how-h">
+    <h2 id="how-h">Three steps, and your posture has a number</h2>
+    <p class="section-lead">There is no setup wizard to survive and no baseline pulled from a
+    population average. Pillar measures you, once, and then stays out of the way.</p>
+
+    <ol class="steps">
+      <li class="step">
+        <h3>Measure yourself</h3>
+        <p>Two reads of five seconds: sit the way you would like to sit, then slump the way you
+        actually do. Those two angles are your threshold, and you can redo them whenever your
+        desk changes.</p>
+        <div class="mini mini--read">
+          <span class="mini__label">Your baseline</span>
+          <div class="read-row">
+            <div class="mascot" data-lean="0" data-expr="0.7" aria-hidden="true"><img src="assets/mascot.svg" alt="" width="941" height="1672" loading="lazy" decoding="async"></div>
+            <span>comfortably tall</span><b class="fig--olive">6°</b>
+          </div>
+          <div class="read-row">
+            <div class="mascot" data-lean="0.9" data-expr="-0.4" aria-hidden="true"><img src="assets/mascot.svg" alt="" width="941" height="1672" loading="lazy" decoding="async"></div>
+            <span>slumped</span><b class="fig--clay">19°</b>
+          </div>
+        </div>
+      </li>
+      <li class="step">
+        <h3>Start a session and work</h3>
+        <p>Open-ended, or a Pomodoro block with the breaks built in. Pillar watches head pitch
+        and nudges you when your head has been forward long enough to be a slump rather than a
+        glance at your keyboard.</p>
+        <div class="mini">
+          <span class="mini__label">In your ear, 40 minutes in</span>
+          <div class="mini--nudge" style="margin-top:10px">
+            <b>Ease your head up.</b>
+            <span>One haptic tap. It stops the moment you straighten.</span>
+          </div>
+        </div>
+      </li>
+      <li class="step">
+        <h3>Finish and see it</h3>
+        <p>The session closes with a score out of 100, the minutes you held, and how many nudges
+        you answered. Over weeks those sessions become a trend and one pattern worth acting on.</p>
+        <div class="mini">
+          <span class="mini__label">Session done</span>
+          <div class="mini--done" style="margin-top:10px">
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><use href="#i-check"/></svg>
+            <span class="mini__figure">Score 84 · 52m tall</span>
+            <span class="mini__sub">4 nudges · 3 answered within 20 seconds</span>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <div class="grab">
+    <p>Free to install. Calibrate, run a session and see your first score before you pay for anything.</p>
+    <div class="cta">
+      <a class="store" href="#get" data-cta="mid" aria-label="Download Pillar on the App Store">
+        <img src="assets/app-store-badge.svg" alt="Download on the App Store" width="168" height="56">
+      </a>
+    </div>
   </div>
 
-  <h2>How it works</h2>
-  <ul>
-    <li>Put your AirPods in and start a session — open-ended, or a Pomodoro focus/break block.</li>
-    <li>Pillar measures your own tall and slouched angles once, so the threshold is yours and not an average.</li>
-    <li>While you work it watches head pitch and nudges you with a haptic or a soft cue when your head drops
-      forward and stays there. The nudge stops the moment you straighten.</li>
-    <li>At the end you get a score for the session, and over weeks the trend and one pattern worth acting on.</li>
-  </ul>
+  <!-- ── Features ──────────────────────────────────────────────────────── -->
+  <section class="features" id="features" aria-labelledby="features-h">
+    <h2 id="features-h">What it actually does while you work</h2>
+    <p class="section-lead">Five surfaces, each doing one job. None of them asks you to look at
+    your phone during the part that matters.</p>
 
-  <h2>Private by design</h2>
-  <ul>
-    <li>Head-position data is read and analysed <strong>on your iPhone</strong>. Raw motion never leaves the device.</li>
-    <li>No camera, no microphone recording, no account, no password.</li>
-    <li>Your session history lives in local app storage and you can wipe it from the app at any time.</li>
-  </ul>
-  <p>The details, including the little we do send for anonymous analytics, are in the
-  <a href="/privacy-policy.html">Privacy Policy</a>.</p>
+    <div class="feature">
+      <div class="feature__copy">
+        <h3>A nudge you feel, not a notification you swipe away</h3>
+        <p>The signal arrives where your ears already are: a haptic tap, a soft chime, or both.
+        It fires on <b>your</b> angle, not a generic one, and only after your head has stayed
+        forward long enough to mean something. Straighten up and it is gone — there is no second
+        reminder and nothing to dismiss.</p>
+        <p class="feature__note">Sensitivity, signal and quiet hours are all adjustable.</p>
+      </div>
+      <figure class="panel">
+        <div class="ui">
+          <div class="ui__sky ui__sky--dusk">
+            <div class="ui__row">
+              <span class="pill pill--warn"><i></i>Session · 41:08</span>
+            </div>
+            <div class="figure figure--glow" style="--w:112px;--sky-glow:var(--glow-dusk);margin-top:14px">
+              <div class="mascot" data-lean="0" data-expr="0.6" aria-hidden="true"><img src="assets/mascot.svg" alt="" width="941" height="1672" loading="lazy" decoding="async"></div>
+            </div>
+          </div>
+          <div class="ui__sheet">
+            <div class="ui__title">Ease your head up.</div>
+            <p class="ui__label" style="margin-top:6px">17° forward · nudged 4 seconds ago</p>
+            <div class="spectrum">
+              <div class="spectrum__bar"></div>
+              <div class="spectrum__mark" style="--at:84%"></div>
+              <div class="spectrum__scale"><span>leaning back</span><span>tall</span><span>slouching</span></div>
+            </div>
+            <div class="btn-row">
+              <span class="btn btn--paper"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#i-pause"/></svg>Pause</span>
+              <span class="btn btn--ink">End</span>
+            </div>
+          </div>
+        </div>
+      </figure>
+    </div>
 
-  <h2>Requirements</h2>
-  <p>An iPhone running iOS 18.5 or later, and AirPods with motion sensors — AirPods Pro (1st or
-  2nd generation), AirPods (3rd generation) or AirPods Max. Motion &amp; Fitness permission is
-  needed for head tracking; the app opens and works without it, but it cannot measure your posture.</p>
+    <div class="feature feature--flip">
+      <div class="feature__copy">
+        <h3>Your angles, not an average</h3>
+        <p>Necks are not the same length and desks are not the same height, so a threshold
+        borrowed from a study fires at the wrong moment for most people. Calibration takes ten
+        seconds: <b>sit comfortably tall</b>, then <b>slump</b>. Pillar keeps both numbers and
+        puts the nudge line between them.</p>
+        <p class="feature__note">Redo it when you change chairs, monitors or desks.</p>
+      </div>
+      <figure class="panel">
+        <div class="ui">
+          <div class="ui__sky ui__sky--tall">
+            <div class="ui__row"><span class="ui__label">Calibration · read 1 of 2</span></div>
+            <div class="figure figure--glow" style="--w:104px;margin-top:14px">
+              <div class="mascot" data-lean="0" data-expr="0.8" aria-hidden="true"><img src="assets/mascot.svg" alt="" width="941" height="1672" loading="lazy" decoding="async"></div>
+            </div>
+          </div>
+          <div class="ui__sheet">
+            <div class="ui__title">Sit comfortably tall.</div>
+            <p class="ui__label" style="margin-top:6px">Hold it for five seconds. Breathe normally.</p>
+            <ul class="ledger" style="margin-top:12px">
+              <li>
+                <div class="ledger__lead"><span class="fig fig--olive">6°</span><span class="ledger__label">comfortably tall</span></div>
+                <span class="ledger__side">saved</span>
+              </li>
+              <li>
+                <div class="ledger__lead"><span class="fig fig--clay">19°</span><span class="ledger__label">slumped</span></div>
+                <span class="ledger__side">saved</span>
+              </li>
+              <li>
+                <div class="ledger__lead"><span class="fig fig--s">12°</span><span class="ledger__label">nudges from here</span></div>
+                <span class="ledger__side">medium</span>
+              </li>
+            </ul>
+            <div class="btn btn--olive">Save</div>
+          </div>
+        </div>
+      </figure>
+    </div>
 
-  <ul class="card-list">
-    <li><a href="/privacy-policy.html"><strong>Privacy Policy</strong><span>What stays on your device, and what little leaves it.</span></a></li>
-    <li><a href="/terms-of-use.html"><strong>Terms of Use</strong><span>The agreement, and what Pillar is not — it is not a medical device.</span></a></li>
-    <li><a href="/subscription-terms.html"><strong>Subscription Terms</strong><span>Plans, prices, free trial, auto-renewal and how to cancel.</span></a></li>
-    <li><a href="/support.html"><strong>Support</strong><span>Something broken or confusing? Write to us.</span></a></li>
-  </ul>
+    <div class="feature">
+      <div class="feature__copy">
+        <h3>The timer is the reason to keep the AirPods in</h3>
+        <p>Focus is a Pomodoro that happens to know how you sat. Set the focus length, the short
+        and long rests and how many cycles; the timeline shows the shape of the afternoon before
+        you start it. Posture is watched during focus and left alone during the break, which is
+        when you should be moving anyway.</p>
+        <p class="feature__note">Focus, rests and cycles are all yours to set.</p>
+      </div>
+      <figure class="panel">
+        <div class="ui">
+          <div class="ui__sky ui__sky--afternoon">
+            <div class="ui__row">
+              <span class="ui__title ui__title--sm">Focus</span>
+              <span class="pill"><i></i>Connected</span>
+            </div>
+            <div class="tl" aria-hidden="true">
+              <i style="flex:25"></i><i class="is-rest" style="flex:5"></i>
+              <i style="flex:25"></i><i class="is-rest" style="flex:5"></i>
+              <i style="flex:25"></i><i class="is-rest" style="flex:15"></i>
+              <i style="flex:25"></i>
+            </div>
+            <p class="ui__caption" style="color:var(--ink-2)">4 cycles · ends at 16:40</p>
+          </div>
+          <div class="ui__sheet">
+            <div class="sliders">
+              <div>
+                <div class="slider__row"><span>Focus</span><b>25 min</b></div>
+                <div class="slider" style="--at:31%"><i></i></div>
+              </div>
+              <div>
+                <div class="slider__row"><span>Short rest</span><b>5 min</b></div>
+                <div class="slider" style="--at:21%"><i></i></div>
+              </div>
+              <div>
+                <div class="slider__row"><span>Long rest</span><b>15 min</b></div>
+                <div class="slider" style="--at:25%"><i></i></div>
+              </div>
+            </div>
+            <div class="btn btn--olive"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><use href="#i-play"/></svg>Start focus</div>
+          </div>
+        </div>
+      </figure>
+    </div>
+
+    <div class="feature feature--flip">
+      <div class="feature__copy">
+        <h3>It keeps going with the phone face down <span class="plat">Live Activity</span></h3>
+        <p>The session lives on the Lock Screen and in the Dynamic Island, so the timer, the
+        state and the score are one glance away without unlocking anything. That is the whole
+        point: the phone should not be the thing you look at while you are trying to work.</p>
+        <p class="feature__note">Widgets and the Live Activity are part of Premium.</p>
+      </div>
+      <figure class="panel">
+        <div class="lock">
+          <div class="lock__clock">
+            <span>Tuesday 8 September</span>
+            <b>9:41</b>
+          </div>
+          <div class="la">
+            <div class="la__top">
+              <div>
+                <div class="la__state">Sitting tall</div>
+                <div class="la__time">18:24</div>
+                <div class="la__sub">focus left · cycle 2 of 4</div>
+              </div>
+              <div class="mascot mascot--bust" data-lean="0" data-expr="0.75" aria-hidden="true"><img src="assets/mascot.svg" alt="" width="941" height="1672" loading="lazy" decoding="async"></div>
+            </div>
+            <div class="la__foot">
+              <span><b>82</b> score · <b>78%</b> tall so far</span>
+              <span class="la__end">End</span>
+            </div>
+          </div>
+          <div class="lock__island">
+            <span class="island">
+              <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><use href="#i-flame"/></svg>
+              <b>18:24</b>
+              <i></i>
+            </span>
+            <span class="lock__caption">Dynamic Island, while you are in another app</span>
+          </div>
+        </div>
+      </figure>
+    </div>
+
+    <div class="feature">
+      <div class="feature__copy">
+        <h3>Proof over weeks, not a dashboard</h3>
+        <p>Insights answers four questions in order and then stops: am I getting better, how
+        much did I sit tall each day against my goal, am I regular, and when do I slip. One
+        chart, three numbers, and a single sentence naming <b>the one thing to change</b>.
+        No heat map you will never read twice.</p>
+        <p class="feature__note">The slip sentence appears once there are three sessions to read.</p>
+      </div>
+      <figure class="panel">
+        <div class="ui">
+          <div class="ui__sky">
+            <div class="ui__row">
+              <span class="ui__title ui__title--sm">Insights</span>
+              <span><span class="fig fig--s">82</span> <span class="ui__label">+3 vs last week</span></span>
+            </div>
+            <div class="ui__row" style="justify-content:flex-start;margin-top:14px">
+              <div class="seg"><span class="is-on">Week</span><span>Month</span></div>
+            </div>
+            <ul class="bars" style="--goal:62%">
+              <li><i style="--h:76%"></i><em>W</em></li>
+              <li><i style="--h:63%"></i><em>T</em></li>
+              <li><i style="--h:56%"></i><em>F</em></li>
+              <li class="is-low"><i style="--h:24%"></i><em>S</em></li>
+              <li class="is-low"><i style="--h:16%"></i><em>S</em></li>
+              <li><i style="--h:69%"></i><em>M</em></li>
+              <li><i style="--h:49%"></i><em>T</em></li>
+              <li class="bars__goal"><span>goal 4h</span></li>
+            </ul>
+          </div>
+          <div class="ui__sheet">
+            <ul class="ledger">
+              <li>
+                <div class="ledger__lead"><span class="fig">22h 32m</span><span class="ledger__label">tall this week</span></div>
+                <span class="ledger__side">+2h 10m</span>
+              </li>
+              <li>
+                <div class="ledger__lead"><span class="fig fig--s">3 of 7</span><span class="ledger__label">days on goal</span></div>
+                <span class="ledger__side">last week 2</span>
+              </li>
+              <li>
+                <div class="ledger__lead"><span class="fig fig--s fig--gold">14 days</span><span class="ledger__label">streak</span></div>
+                <span class="ledger__side">best 14</span>
+              </li>
+            </ul>
+            <p class="one"><b>One change:</b> you slip most around 2pm. A five-minute break before it starts costs less than the hour after it.</p>
+          </div>
+        </div>
+      </figure>
+    </div>
+
+    <div class="feature feature--flip">
+      <div class="feature__copy">
+        <h3>Every part of it can be turned down</h3>
+        <p>Sensitivity from light to strict. Haptic, chime or both. Quiet hours so nothing fires
+        during a call. Background tracking off if you would rather it only run with the app open.
+        And two buttons that clear your history for good, with no account to close first, because
+        there was never an account.</p>
+        <p class="feature__note">Your data is yours to delete from inside the app.</p>
+      </div>
+      <figure class="panel">
+        <div class="ui">
+          <div class="ui__sky" style="padding-bottom:26px">
+            <div class="ui__row">
+              <span class="ui__title ui__title--sm">You</span>
+              <span class="pill"><i></i>Connected</span>
+            </div>
+          </div>
+          <div class="ui__sheet">
+            <div class="group__title">Nudges</div>
+            <ul class="group">
+              <li><span>Sensitivity</span><span class="val">Medium</span></li>
+              <li><span>Signal &amp; timing</span><span class="val">Haptic + sound</span></li>
+              <li><span>Quiet hours</span><span class="val">Off</span></li>
+            </ul>
+            <div class="group__title">Tracking</div>
+            <ul class="group">
+              <li><span>Track in background</span><span class="switch" role="img" aria-label="on"></span></li>
+              <li><span>Mix with my music</span><span class="switch" role="img" aria-label="on"></span></li>
+            </ul>
+            <div class="group__title">Data</div>
+            <ul class="group">
+              <li><span style="color:var(--clay-text)">Reset score</span><span class="val">Clear history</span></li>
+              <li><span style="color:var(--clay-text)">Delete my data</span><span class="val">Start from setup</span></li>
+            </ul>
+          </div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ── Result ────────────────────────────────────────────────────────── -->
+  <section class="result">
+    <div class="result__copy">
+      <h2>The reward is at the end, where it belongs</h2>
+      <p>Nothing about the live session is celebratory — it is a bar, a word and a timer, and it
+      stays quiet. The warmth is saved for the moment you finish: the score, the longest stretch
+      you held, and the streak ticking over one more day.</p>
+      <p>That is the whole loop. Start it, forget it, and let the finish tell you how it went.</p>
+    </div>
+
+    <figure class="panel">
+      <div class="ui">
+        <div class="ui__sky ui__sky--gold">
+          <div class="ui__row"><span class="pill pill--gold"><i></i>Personal best score</span></div>
+          <div class="figure figure--glow" style="--w:120px;--sky-glow:var(--glow-reward);margin-top:14px">
+            <div class="mascot" data-lean="0" data-expr="1" data-reward="1" aria-hidden="true"><img src="assets/mascot.svg" alt="" width="941" height="1672" loading="lazy" decoding="async"></div>
+          </div>
+        </div>
+        <div class="ui__sheet">
+          <div class="ui__title">Session done.</div>
+          <ul class="ledger" style="margin-top:10px">
+            <li>
+              <div class="ledger__lead"><span class="fig fig--l">88</span><span class="ledger__label">score</span></div>
+              <span class="ledger__side">+5 vs usual</span>
+            </li>
+            <li>
+              <div class="ledger__lead"><span class="fig fig--s">31m</span><span class="ledger__label">longest tall stretch</span></div>
+              <span class="ledger__side">of 52m</span>
+            </li>
+            <li>
+              <div class="ledger__lead"><span class="fig fig--s fig--gold">15 days</span><span class="ledger__label">streak</span></div>
+              <span class="ledger__side">4 nudges · 3 answered</span>
+            </li>
+          </ul>
+          <div class="btn btn--ink">Done</div>
+        </div>
+      </div>
+    </figure>
+  </section>
+
+  <!-- ── Privacy ───────────────────────────────────────────────────────── -->
+  <section class="privacy" id="privacy" aria-labelledby="privacy-h">
+    <h2 id="privacy-h">A posture app has to watch you. This one does it without seeing you.</h2>
+    <p class="section-lead">Every other way of measuring posture points a lens at you or straps
+    something to your back. Pillar reads one number — how far your head is tipped forward — from
+    a sensor that is already in your ear, and does the reading on your own device.</p>
+
+    <ul class="facts">
+      <li class="fact">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><use href="#i-eye-off"/></svg>
+        <span><b>No camera, ever.</b> There is no camera permission, no photo of you and no video. The app cannot see the room you are sitting in.</span>
+      </li>
+      <li class="fact">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><use href="#i-phone"/></svg>
+        <span><b>The analysis runs on your iPhone.</b> Raw head-motion data never leaves the device, and there is no account and no password to create.</span>
+      </li>
+      <li class="fact">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><use href="#i-trash"/></svg>
+        <span><b>You can wipe it in two taps.</b> Session history lives in local app storage and the You tab clears it whenever you want.</span>
+      </li>
+    </ul>
+
+    <p class="section-lead">The complete list, including the handful of anonymous events we do
+    send, is in the <a href="/privacy-policy.html" style="color:var(--olive-ink)">Privacy Policy</a>.</p>
+  </section>
+
+
+  <!-- ── Requirements ──────────────────────────────────────────────────── -->
+  <section class="spec-block" id="requirements" aria-labelledby="requirements-h">
+    <h2 id="requirements-h">What you need to run it</h2>
+    <p class="section-lead">Pillar is iPhone-only, because it depends on the head-motion data
+    iOS reports from Apple's own earbuds. There is no Android version and none is planned.</p>
+
+    <dl class="spec">
+      <div><dt>iPhone</dt><dd>iOS 18.5 or later.</dd></div>
+      <div><dt>Headphones</dt><dd>AirPods Pro (1st or 2nd generation), AirPods (3rd generation), or AirPods Max. Older AirPods have no motion sensors and cannot report head position.</dd></div>
+      <div><dt>Permission</dt><dd>Motion &amp; Fitness. The app opens and works without it, but it cannot measure your posture.</dd></div>
+      <div><dt>What is measured</dt><dd>Head pitch — how far your head is tipped forward — from the AirPods motion sensors. Nothing else.</dd></div>
+      <div><dt>Where it is measured</dt><dd>On your iPhone. Raw motion never leaves the device.</dd></div>
+      <div><dt>Account</dt><dd>None. No name, email, phone number or password is asked for or created.</dd></div>
+      <div><dt>Price</dt><dd>Free to install. Premium is a subscription — see the <a href="/subscription-terms.html">Subscription Terms</a>.</dd></div>
+      <div><dt>What it is not</dt><dd>A medical device. Pillar does not diagnose, treat or prevent any condition.</dd></div>
+    </dl>
+  </section>
+
+  <!-- ── FAQ ───────────────────────────────────────────────────────────── -->
+  <section class="faq" id="faq" aria-labelledby="faq-h">
+    <h2 id="faq-h">Questions people ask first</h2>
+    <div class="faq__list">
+      <details>
+        <summary>How can AirPods measure my posture?</summary>
+        <p>AirPods Pro, AirPods (3rd generation) and AirPods Max contain motion sensors that iOS
+        exposes as head-motion data. Pillar reads the pitch of that data — how far your head is
+        tipped forward — and compares it against the angles you measured yourself during
+        calibration. It never sees your body, only the angle of your head.</p>
+      </details>
+      <details>
+        <summary>Which AirPods work with Pillar?</summary>
+        <p>AirPods Pro (1st and 2nd generation), AirPods (3rd generation) and AirPods Max. Older
+        AirPods have no motion sensors and cannot report head position. You also need an iPhone
+        running iOS 18.5 or later, and Motion &amp; Fitness permission — the app opens and works
+        without it, but it cannot measure your posture.</p>
+      </details>
+      <details>
+        <summary>Does Pillar use my camera?</summary>
+        <p>No. There is no camera access, no photo of you and no video. The only sensor Pillar
+        reads is the motion sensor already inside your AirPods.</p>
+      </details>
+      <details>
+        <summary>Does my data leave my phone?</summary>
+        <p>Head-position data is read and analysed on your iPhone, and raw motion never leaves the
+        device. Your session history lives in local app storage and you can wipe it from the app
+        at any time. A short, itemised list of the anonymous analytics events we do send is in the
+        Privacy Policy.</p>
+      </details>
+      <details>
+        <summary>What does a nudge feel like?</summary>
+        <p>A haptic tap, a soft chime in the AirPods, or both — you choose. It fires when your
+        head has been forward past your own threshold for long enough that it is a slump and not
+        a glance at the keyboard, and it stops the moment you straighten.</p>
+      </details>
+      <details>
+        <summary>Will it nag me all day?</summary>
+        <p>Pillar only watches during a session you started. Sensitivity is adjustable, quiet
+        hours silence nudges on a schedule, and a nudge disappears as soon as your head comes
+        back up rather than repeating at you.</p>
+      </details>
+      <details>
+        <summary>Can I use it with music or on a call?</summary>
+        <p>Yes. Sound cues mix with whatever is playing, and you can switch to haptic only. Head
+        tracking works whether or not audio is playing, as long as both AirPods are in.</p>
+      </details>
+      <details>
+        <summary>Is Pillar a medical device?</summary>
+        <p>No. Pillar is a posture-awareness and focus tool. It does not diagnose, treat or
+        prevent any condition, and it is not a substitute for advice from a clinician.</p>
+      </details>
+      <details>
+        <summary>Is Pillar free?</summary>
+        <p>Pillar is free to install, and the free tier includes calibration, one session a day
+        and the Today screen. Premium unlocks unlimited sessions, the Pomodoro focus timer, full
+        Insights and history, all nudge sounds and the widgets. The current plans, the trial and
+        how to cancel are on the <a href="/subscription-terms.html" style="color:var(--olive-ink)">Subscription Terms</a> page.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ── Close ─────────────────────────────────────────────────────────── -->
+  <section class="close" id="get">
+    <img class="icon" src="assets/app-icon.png" alt="" width="76" height="76">
+    <h2>Sit tall through the next work block.</h2>
+    <p>Free to install. Calibrate, run a session, and see your first score before you pay
+    for anything.</p>
+    <div class="cta cta--center">
+      <a class="store" href="#get" data-cta="close" aria-label="Download Pillar on the App Store">
+        <img src="assets/app-store-badge.svg" alt="Download on the App Store" width="168" height="56">
+      </a>
+    </div>
+    <p class="disclaimer">Coming to the App Store for iPhone. Requires iOS 18.5 or later and
+    AirPods with motion sensors.</p>
+  </section>
+
+</div>
 </main>
 
 <footer class="site-footer">
-  <div class="site-footer__inner">
+  <div class="shell foot">
     <nav>
       <a href="/privacy-policy.html">Privacy Policy</a>
       <a href="/terms-of-use.html">Terms of Use</a>
       <a href="/subscription-terms.html">Subscription Terms</a>
       <a href="/support.html">Support</a>
     </nav>
-    <p>&copy; 2026 Pillar. All rights reserved.</p>
-    <p class="disclaimer">Pillar is a posture-awareness and focus tool. It is not a medical device and does not
-    diagnose, treat or prevent any condition.</p>
+    <div class="foot__meta">
+      <p>&copy; 2026 Pillar. All rights reserved.</p>
+      <p>Pillar is a posture-awareness and focus tool. It is not a medical device and does not
+      diagnose, treat or prevent any condition.</p>
+    </div>
   </div>
 </footer>
 
+<div class="dock">
+  <img src="assets/app-icon.png" alt="" width="36" height="36">
+  <span>Pillar</span>
+  <a class="store" href="#get" data-cta="dock" aria-label="Download Pillar on the App Store">
+    <img src="assets/app-store-badge.svg" alt="Download on the App Store" width="168" height="56">
+  </a>
+</div>
+
+<script src="assets/rig-vectors.js" defer></script>
+<script src="assets/mascot.js" defer></script>
+<script src="assets/pillar.js" defer></script>
 </body>
 </html>

@@ -9,11 +9,62 @@ working link to the subscription terms on the purchase screen.
 
 | File | URL | Used as |
 |---|---|---|
-| `index.html` | `/` | App Store *Marketing URL* |
+| `index.html` | `/` | App Store *Marketing URL*; the marketing landing page |
 | `privacy-policy.html` | `/privacy-policy.html` | App Store *Privacy Policy URL*, You tab |
 | `terms-of-use.html` | `/terms-of-use.html` | App Store *EULA / Terms*, You tab, paywall |
 | `subscription-terms.html` | `/subscription-terms.html` | Paywall link, You tab |
 | `support.html` | `/support.html` | App Store *Support URL*, You tab |
+| `robots.txt` · `sitemap.xml` · `llms.txt` | root | Crawlers and answer engines |
+
+Shared front end: `assets/styles.css` (the whole site), `assets/mascot.js` +
+`assets/rig-vectors.js` (the live mascot), `assets/pillar.js` (analytics and the
+one scripted interaction).
+
+## The landing page
+
+`index.html` is a single long-scroll page in the app's own **Window light** world
+(see `DESIGN.md`): a sky plane over a desk sheet, olive for action, gold for
+reward, clay for warning. Every app screen on it except the hero is **hand-built
+HTML**, not a screenshot, so it has to be updated when the app's own screens
+move. The hero uses `assets/shots/today.webp`, rendered from
+`docs/design/pillar-aso-screens/`.
+
+The flower is the real rig: `assets/rig-vectors.js` is a copy of
+`carry-mascot/rig/rig_vectors.js` and `assets/mascot.js` is a port of that
+folder's `vector.html` spring engine. Pose an instance from markup —
+`<div class="mascot" data-lean="0.9" data-expr="-0.4" data-reward="1">` — and the
+idle breath, blinks, petal follow-through and reward bloom come for free. Re-copy
+`rig_vectors.js` if the traced geometry ever changes. `assets/mascot.svg` is the
+still fallback shown before the rig mounts and when JavaScript is off.
+
+**The App Store badge points nowhere yet.** When the listing exists, replace the
+five `href="#get"` values on `a.store` (hero, mid-page strip, close, dock) with
+the real URL, drop the "Coming to iPhone" note beside the hero badge and the
+"Coming to the App Store" line in the close card, and add `downloadUrl` +
+`sameAs` to the `SoftwareApplication` node in the JSON-LD.
+
+## Analytics
+
+`assets/pillar.js` sends three events to the **same** PostHog project the app
+uses (`Pillar`, 598334): `site_page_viewed`, `site_cta_clicked` (with the `slot`
+that was pressed) and `site_faq_opened`. It runs cookieless — `persistence:
+'memory'`, `person_profiles: 'never'`, `respect_dnt: true`, no autocapture, no
+session recording, no surveys or flags — so the site needs no consent banner.
+**Adding or renaming an event means editing `privacy-policy.html` §4 "This
+website" in the same commit.**
+
+## Answer engines
+
+`llms.txt` is the plain-text brief an answer engine reads, and it is written to
+sell, not to describe: the one-line pitch, why Pillar beats a camera app, a
+posture wearable, a reminder app and a generic threshold, the focus loop, what
+you get, requirements, privacy, price and who it is for. It must never invent a
+rating, a testimonial, a press mention or a user count — Pillar has none — but
+everything true about the product belongs in it.
+`index.html` carries an `Organization` / `WebSite` / `WebPage` /
+`SoftwareApplication` / `HowTo` / `FAQPage` graph. **Keep `llms.txt`, the FAQ
+markup, the `#requirements` ledger and the JSON-LD saying the same thing** — a
+contradiction between them is worse than any one of them being absent.
 
 The URLs are hard-coded in the app in
 [`pillar/src/Pillar/Utilities/PillarLinks.swift`](../pillar/src/Pillar/Utilities/PillarLinks.swift).

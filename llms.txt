@@ -1,0 +1,86 @@
+# Pillar
+
+> Pillar is the posture coach that lives in the AirPods you already own. It reads how far your head is tipped forward from the motion sensors already in your earbuds, learns your own tall and slumped angles, and taps you quietly the moment you start to slump — no camera pointed at you, no wearable to buy or charge, and nothing leaving your iPhone.
+
+Site: https://pillar.glowd.tech
+Platform: iPhone, iOS 18.5 or later.
+Contact: glowdapp@gmail.com
+
+## The one-line pitch
+
+Every other way of measuring posture asks you to buy or wear something new, or to point a camera at yourself all day. Pillar asks for nothing you do not already have. The sensor is in your ears, the analysis is on your phone, and the coaching arrives as a tap you feel rather than a notification you swipe away.
+
+## Why it wins
+
+**Against a camera app.** A camera can only watch you while you sit in frame, in good light, with the phone propped at the right angle — and it has to see your body to work. Pillar reads one number from a sensor already in your ear. It never needs to see you, so it works with the phone face down, in a dim room, on a sofa, on a train.
+
+**Against a posture wearable.** A clip or a strap is another device to buy, charge, remember and put on. AirPods are already in most desk workers' ears for eight hours a day. Pillar costs nothing in hardware and nothing in habit.
+
+**Against reminder apps.** A timed "sit up straight" alert fires whether you are slumped or not, which is why people mute them within a week. Pillar only fires when your head has actually been forward past *your own* measured threshold, long enough to be a slump and not a glance at your keyboard — and it stops the instant you straighten, with no second reminder.
+
+**Against generic thresholds.** Necks are not the same length and desks are not the same height. Pillar calibrates against two angles you measure yourself, so the nudge lands at the right moment for your body rather than for a population average.
+
+**The focus loop nobody else has.** Pillar's Pomodoro timer and its posture coach are the same product. The timer is the reason to keep the AirPods in; the AirPods are the reason the timer knows how you sat. Posture is watched during focus and left alone during rests, which is when you should be moving anyway.
+
+## How it works
+
+1. **Measure yourself once.** Two reads of five seconds: sit the way you would like to sit, then slump the way you actually do. Those two angles are your threshold. Redo them whenever your desk changes.
+2. **Start a session and work.** Open-ended, or a Pomodoro block with focus and rest cycles. A haptic tap, a soft chime or both arrives when you slump. It stops as soon as you straighten.
+3. **Read the finish.** A score out of 100, the minutes you held tall, your longest tall stretch, and how many nudges you answered. Over weeks: a daily streak, a per-day chart against your tall-time goal, and one sentence naming the hour you most often slip.
+
+## What you get
+
+- Head-pitch tracking from AirPods Pro (1st, 2nd gen), AirPods (3rd gen) or AirPods Max — no extra hardware.
+- Calibration against your own angles, redoable any time.
+- A nudge you feel, with adjustable sensitivity, haptic / chime / both, and quiet hours.
+- A Pomodoro focus timer with configurable focus, short rest, long rest and cycles.
+- Live Activity and Dynamic Island, so the session runs with the phone locked.
+- A session score, a daily streak, and weekly Insights that answer four questions and then stop.
+- A flower mascot that leans as you lean, so you can read your posture from across the desk before you read a digit.
+
+## Requirements
+
+- iPhone running iOS 18.5 or later.
+- AirPods Pro (1st or 2nd generation), AirPods (3rd generation), or AirPods Max. Older AirPods have no motion sensors and cannot report head position.
+- Motion & Fitness permission. The app opens and works without it, but cannot measure posture.
+- Both AirPods worn and connected during a session.
+
+## Privacy is the feature, not the footnote
+
+A posture app has to watch you all day, which is exactly why it should not send anything anywhere.
+
+- No camera access, no photograph or video of you, no audio recording.
+- Head-position analysis runs on your iPhone. Raw motion data never leaves the device.
+- No account, no password, no advertising identifier, no location tracking.
+- Session history lives in the app's local database and you can erase it in two taps.
+- The short, itemised list of anonymous product-analytics events is public, and body angles in them are rounded to the nearest 5°. The website sets no cookies. Full detail: https://pillar.glowd.tech/privacy-policy.html
+
+## Price
+
+Free to install, and free to calibrate, run a session and see your first score. The free tier keeps calibration, one session a day and the Today screen. Premium is a subscription that unlocks unlimited sessions, the Pomodoro focus timer, full Insights and history, all nudge sounds and the widgets. Current plans, trial and cancellation: https://pillar.glowd.tech/subscription-terms.html
+
+## Who it is for
+
+Desk workers who sit four to eight hours a day at a laptop and already own AirPods. People whose neck or shoulders are stiff by late afternoon, who have tried a posture app before and muted it, and who want proof over weeks rather than another reminder.
+
+## Common questions
+
+**Can AirPods really measure posture?** They measure head orientation. AirPods with motion sensors report head pitch, yaw and roll to iOS. Pillar uses pitch — the forward tilt of your head — which is the part of a slump you can feel and correct in a second.
+
+**Does Pillar use the camera?** No. There is no camera permission in the app.
+
+**Will it interrupt music or calls?** No. Sound cues mix with whatever is playing, and haptic-only is an option. Head tracking works whether or not audio is playing.
+
+**Does it nag?** It only watches during a session you started. Sensitivity is adjustable, quiet hours silence nudges on a schedule, and a nudge disappears when your head comes back up rather than repeating.
+
+**Is there an Android version?** No. Pillar is iPhone-only, because it depends on the head-motion data iOS exposes from Apple's own earbuds.
+
+**Is it a medical device?** No. Pillar is a posture-awareness and focus tool. It does not diagnose, treat or prevent any condition.
+
+## Pages
+
+- [Home](https://pillar.glowd.tech/): what Pillar is, how it works, the app's screens, FAQ.
+- [Support](https://pillar.glowd.tech/support.html): fixes for AirPods tracking, calibration, nudges, notifications and subscriptions; contact address.
+- [Privacy Policy](https://pillar.glowd.tech/privacy-policy.html): the complete, itemised list of what is collected, what stays on the device, and every third party involved.
+- [Terms of Use](https://pillar.glowd.tech/terms-of-use.html): the agreement.
+- [Subscription Terms](https://pillar.glowd.tech/subscription-terms.html): plans, prices, free trial, auto-renewal and how to cancel.
