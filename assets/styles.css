@@ -622,10 +622,12 @@ h3 { font-size: clamp(1.28rem, 2.1vw, 1.68rem); }
 .btn-row { display: flex; gap: 10px; margin-top: 16px; }
 .btn-row .btn { flex: 1; margin-top: 0; }
 
-/* The posture spectrum — the app's live read, rebuilt. */
-.spectrum { position: relative; margin: 18px 0 8px; }
+/* The posture spectrum — the app's live read, rebuilt. The marker rides the
+   track itself, so spacing the scale below can never pull it off the bar. */
+.spectrum { margin: 18px 0 8px; }
 
 .spectrum__bar {
+  position: relative;
   height: 8px;
   border-radius: 999px;
   background: linear-gradient(90deg, #d9a93e 0%, #8a9a4e 18%, #6b7a3a 34%, #6b7a3a 50%, #8a9a4e 60%, #d9a93e 72%, #c4643a 100%);
@@ -646,7 +648,7 @@ h3 { font-size: clamp(1.28rem, 2.1vw, 1.68rem); }
 .spectrum__scale {
   display: flex;
   justify-content: space-between;
-  margin-top: 14px;
+  margin-top: 12px;
   color: var(--ink-3);
   font-size: 0.72rem;
   font-weight: 600;
