@@ -16,6 +16,13 @@ working link to the subscription terms on the purchase screen.
 | `support.html` | `/support.html` | App Store *Support URL*, You tab |
 | `robots.txt` · `sitemap.xml` · `llms.txt` | root | Crawlers and answer engines |
 
+**What is deliberately not here:** the onboarding bundles (`b/`), `version.json` and
+`codes.json` — the files the *app* fetches — live in `ota-site/` and are served from
+`ota.glowd.tech`, a different pages repo. The deciding reason is one line further down
+this page: `deploy-pillar-site.sh` mirrors with `rsync --delete`, so a copy edit pushed
+from a checkout that happened not to have `b/` would silently take every published
+onboarding bundle with it. See `ota-site/README.md`.
+
 Shared front end: `assets/styles.css` (the whole site), `assets/mascot.js` +
 `assets/rig-vectors.js` (the live mascot), `assets/pillar.js` (analytics and the
 one scripted interaction).
