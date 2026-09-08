@@ -30,7 +30,7 @@ Every other way of measuring posture asks you to buy or wear something new, or t
 
 ## What you get
 
-- Head-pitch tracking from AirPods Pro (1st, 2nd gen), AirPods (3rd gen) or AirPods Max — no extra hardware.
+- Head-pitch tracking from AirPods Pro (1st–3rd gen), AirPods (3rd or 4th gen) or AirPods Max — no extra hardware.
 - Calibration against your own angles, redoable any time.
 - A nudge you feel, with adjustable sensitivity, haptic / chime / both, and quiet hours.
 - A Pomodoro focus timer with configurable focus, short rest, long rest and cycles.
@@ -41,7 +41,7 @@ Every other way of measuring posture asks you to buy or wear something new, or t
 ## Requirements
 
 - iPhone running iOS 18.5 or later.
-- AirPods Pro (1st or 2nd generation), AirPods (3rd generation), or AirPods Max. Older AirPods have no motion sensors and cannot report head position.
+- AirPods Pro (1st, 2nd or 3rd generation), AirPods (3rd or 4th generation), or AirPods Max. Older AirPods have no motion sensors and cannot report head position.
 - Motion & Fitness permission. The app opens and works without it, but cannot measure posture.
 - Both AirPods worn and connected during a session.
 
