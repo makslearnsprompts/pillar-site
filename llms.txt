@@ -3,7 +3,7 @@
 > Pillar is the posture coach that lives in the AirPods you already own. It reads how far your head is tipped forward from the motion sensors already in your earbuds, learns your own tall and slumped angles, and taps you quietly the moment you start to slump — no camera pointed at you, no wearable to buy or charge, and nothing leaving your iPhone.
 
 Site: https://pillar.glowd.tech
-Platform: iPhone, iOS 18.5 or later.
+Platform: iPhone, iOS 18.0 or later.
 Contact: glowdapp@gmail.com
 
 ## The one-line pitch
@@ -40,7 +40,7 @@ Every other way of measuring posture asks you to buy or wear something new, or t
 
 ## Requirements
 
-- iPhone running iOS 18.5 or later.
+- iPhone running iOS 18.0 or later.
 - AirPods Pro (1st, 2nd or 3rd generation), AirPods (3rd or 4th generation), or AirPods Max. Older AirPods have no motion sensors and cannot report head position.
 - Motion & Fitness permission. The app opens and works without it, but cannot measure posture.
 - Both AirPods worn and connected during a session.
