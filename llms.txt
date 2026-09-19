@@ -3,6 +3,7 @@
 > Pillar is the posture coach that lives in the AirPods you already own. It reads how far your head is tipped forward from the motion sensors already in your earbuds, learns your own tall and slumped angles, and taps you quietly the moment you start to slump — no camera pointed at you, no wearable to buy or charge, and nothing leaving your iPhone.
 
 Site: https://pillar.glowd.tech
+App Store: https://apps.apple.com/app/pillar-posture-reminder/id6809597345
 Platform: iPhone, iOS 18.0 or later.
 Contact: glowdapp@gmail.com
 
