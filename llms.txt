@@ -52,9 +52,9 @@ A posture app has to watch you all day, which is exactly why it should not send 
 
 - No camera access, no photograph or video of you, no audio recording.
 - Head-position analysis runs on your iPhone. Raw motion data never leaves the device.
-- No account, no password, no advertising identifier, no location tracking.
+- No account, no password, no location tracking. The advertising identifier is used only if you allow tracking, to learn which ad led to an install.
 - Session history lives in the app's local database and you can erase it in two taps.
-- The short, itemised list of anonymous product-analytics events is public, and body angles in them are rounded to the nearest 5°. The website sets no cookies. Full detail: https://pillar.glowd.tech/privacy-policy.html
+- The short, itemised list of product-analytics events is public, and none of them carries a body angle or posture score. The website sets no cookies. Full detail: https://pillar.glowd.tech/privacy-policy.html
 
 ## Price
 
